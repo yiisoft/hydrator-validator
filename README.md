@@ -2,31 +2,31 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="100px">
     </a>
-    <h1 align="center">Yii _____</h1>
+    <h1 align="center">Yii Input Validation</h1>
     <br>
 </p>
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/_____/v/stable.png)](https://packagist.org/packages/yiisoft/_____)
-[![Total Downloads](https://poser.pugx.org/yiisoft/_____/downloads.png)](https://packagist.org/packages/yiisoft/_____)
-[![Build status](https://github.com/yiisoft/_____/workflows/build/badge.svg)](https://github.com/yiisoft/_____/actions?query=workflow%3Abuild)
-[![Code Coverage](https://codecov.io/gh/yiisoft/_____/branch/master/graph/badge.svg)](https://codecov.io/gh/yiisoft/_____)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2F_____%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/_____/master)
-[![static analysis](https://github.com/yiisoft/_____/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/_____/actions?query=workflow%3A%22static+analysis%22)
-[![type-coverage](https://shepherd.dev/github/yiisoft/_____/coverage.svg)](https://shepherd.dev/github/yiisoft/_____)
-[![psalm-level](https://shepherd.dev/github/yiisoft/_____/level.svg)](https://shepherd.dev/github/yiisoft/_____)
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/input-validation/v/stable.png)](https://packagist.org/packages/yiisoft/input-validation)
+[![Total Downloads](https://poser.pugx.org/yiisoft/input-validation/downloads.png)](https://packagist.org/packages/yiisoft/input-validation)
+[![Build status](https://github.com/yiisoft/input-validation/workflows/build/badge.svg)](https://github.com/yiisoft/input-validation/actions?query=workflow%3Abuild)
+[![Code Coverage](https://codecov.io/gh/yiisoft/input-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/yiisoft/input-validation)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2Finput-validation%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/input-validation/master)
+[![static analysis](https://github.com/yiisoft/input-validation/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/input-validation/actions?query=workflow%3A%22static+analysis%22)
+[![type-coverage](https://shepherd.dev/github/yiisoft/input-validation/coverage.svg)](https://shepherd.dev/github/yiisoft/input-validation)
+[![psalm-level](https://shepherd.dev/github/yiisoft/input-validation/level.svg)](https://shepherd.dev/github/yiisoft/input-validation)
 
 The package ...
 
 ## Requirements
 
-- PHP 8.1 or higher.
+- PHP 8.0 or higher.
 
 ## Installation
 
 The package could be installed with composer:
 
 ```shell
-composer require yiisoft/_____
+composer require yiisoft/input-validation
 ```
 
 ## General usage
@@ -74,7 +74,7 @@ Use [ComposerRequireChecker](https://github.com/maglnet/ComposerRequireChecker) 
 
 ## License
 
-The Yii _____ is free software. It is released under the terms of the BSD License.
+The Yii Input Validation is free software. It is released under the terms of the BSD License.
 Please see [`LICENSE`](./LICENSE.md) for more information.
 
 Maintained by [Yii Software](https://www.yiiframework.com/).
