@@ -3,11 +3,12 @@ declare(strict_types=1);
 
 namespace Yiisoft\Input\Validation;
 
+use Yiisoft\Hydrator\Attribute\SkipHydration;
 use Yiisoft\Validator\Result;
 
 trait ValidatedInputTrait
 {
-    #[NoPopulate]
+    #[SkipHydration]
     private ?Result $validationResult = null;
 
     public function processValidationResult(Result $result): void
