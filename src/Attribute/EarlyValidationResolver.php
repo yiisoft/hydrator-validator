@@ -17,7 +17,7 @@ final class EarlyValidationResolver implements ParameterAttributeResolverInterfa
     private ?Result $result = null;
 
     public function __construct(
-        private ValidatorInterface $validator,
+        private readonly ValidatorInterface $validator,
     ) {
     }
 
