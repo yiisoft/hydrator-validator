@@ -9,7 +9,7 @@ use Yiisoft\Hydrator\ParameterAttributeInterface;
 use Yiisoft\Validator\RuleInterface;
 
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_PARAMETER | Attribute::IS_REPEATABLE)]
-final class PreValidate implements ParameterAttributeInterface
+final class EarlyValidation implements ParameterAttributeInterface
 {
     /**
      * @var RuleInterface[] $rules
@@ -33,6 +33,6 @@ final class PreValidate implements ParameterAttributeInterface
 
     public function getResolver(): string
     {
-        return PreValidateResolver::class;
+        return EarlyValidationResolver::class;
     }
 }

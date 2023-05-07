@@ -12,7 +12,7 @@ use Yiisoft\Hydrator\UnexpectedAttributeException;
 use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
-final class PreValidateResolver implements ParameterAttributeResolverInterface
+final class EarlyValidationResolver implements ParameterAttributeResolverInterface
 {
     private ?Result $result = null;
 
@@ -28,8 +28,8 @@ final class PreValidateResolver implements ParameterAttributeResolverInterface
 
     public function getParameterValue(ParameterAttributeInterface $attribute, Context $context): mixed
     {
-        if (!$attribute instanceof PreValidate) {
-            throw new UnexpectedAttributeException(PreValidate::class, $attribute);
+        if (!$attribute instanceof EarlyValidation) {
+            throw new UnexpectedAttributeException(EarlyValidation::class, $attribute);
         }
 
         if ($this->result !== null) {

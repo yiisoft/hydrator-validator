@@ -6,7 +6,7 @@ namespace Yiisoft\Input\Validation;
 use Yiisoft\Validator\PostValidationHookInterface;
 use Yiisoft\Validator\Result;
 
-interface ValidatedInputInterface extends PostValidationHookInterface
+interface ValidatedObjectInterface extends PostValidationHookInterface
 {
     public function getValidationResult(): ?Result;
 }

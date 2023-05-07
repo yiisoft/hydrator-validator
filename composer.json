@@ -38,7 +38,8 @@
         "rector/rector": "^0.16.0",
         "roave/infection-static-analysis-plugin": "^1.16",
         "spatie/phpunit-watcher": "^1.23",
-        "vimeo/psalm": "^4.30|^5.11"
+        "vimeo/psalm": "^4.30|^5.11",
+        "yiisoft/test-support": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -47,7 +48,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Yiisoft\\Input\\Validationc\\Tests\\": "tests"
+            "Yiisoft\\Input\\Validation\\Tests\\": "tests"
         }
     },
     "config": {

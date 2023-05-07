@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yiisoft\Input\Validation;
 
 use Yiisoft\Hydrator\HydratorInterface;
-use Yiisoft\Input\Validation\Attribute\PreValidateResolver;
+use Yiisoft\Input\Validation\Attribute\EarlyValidationResolver;
 use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
@@ -14,19 +14,19 @@ final class ValidatingHydrator implements HydratorInterface
     public function __construct(
         private HydratorInterface $hydrator,
         private ValidatorInterface $validator,
-        private PreValidateResolver $resolver,
+        private EarlyValidationResolver $earlyValidationResolver,
     ) {
     }
 
     public function hydrate(
-        object $model,
+        object $object,
         array $data = [],
         array $map = [],
         bool $strict = false
     ): void {
         $result = $this->beforeAction();
-        $this->hydrator->hydrate($model, $data, $map, $strict);
-        $this->afterAction($model, $result);
+        $this->hydrator->hydrate($object, $data, $map, $strict);
+        $this->afterAction($object, $result);
     }
 
     public function create(
@@ -36,26 +36,26 @@ final class ValidatingHydrator implements HydratorInterface
         bool $strict = false
     ): object {
         $result = $this->beforeAction();
-        $model = $this->hydrator->create($class, $data, $map, $strict);
-        $this->afterAction($model, $result);
-        return $model;
+        $object = $this->hydrator->create($class, $data, $map, $strict);
+        $this->afterAction($object, $result);
+        return $object;
     }
 
     private function beforeAction(): Result
     {
         $result = new Result();
-        $this->resolver->setResult($result);
+        $this->earlyValidationResolver->setResult($result);
         return $result;
     }
 
-    private function afterAction(object $model, Result $result): void
+    private function afterAction(object $object, Result $result): void
     {
-        if (!$model instanceof ValidatedInputInterface) {
+        if (!$object instanceof ValidatedObjectInterface) {
             return;
         }
 
         $result->isValid()
-            ? $this->validator->validate($model)
-            : $model->processValidationResult($result);
+            ? $this->validator->validate($object)
+            : $object->processValidationResult($result);
     }
 }
