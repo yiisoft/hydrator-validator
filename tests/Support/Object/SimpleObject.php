@@ -17,7 +17,6 @@ final class SimpleObject implements ValidatedObjectInterface
         #[Required]
         #[Length(min: 3)]
         public string $firstName = '',
-
         #[Length(min: 3, skipOnEmpty: true)]
         public string $lastName = '',
     ) {

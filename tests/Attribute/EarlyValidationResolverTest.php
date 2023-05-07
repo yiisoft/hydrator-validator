@@ -14,7 +14,7 @@ final class EarlyValidationResolverTest extends TestCase
 {
     public function testInvalidAttribute(): void
     {
-        $object = new class() {
+        $object = new class () {
             #[IncorrectEarlyValidationResolver]
             public int $a;
         };
