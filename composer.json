@@ -1,7 +1,7 @@
 {
     "name": "yiisoft/hydrator-validator",
     "type": "library",
-    "description": "_____",
+    "description": "Validating hydrator with raw data validation support",
     "keywords": [
         "input",
         "validation"
