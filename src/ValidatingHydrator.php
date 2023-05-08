@@ -12,9 +12,9 @@ use Yiisoft\Validator\ValidatorInterface;
 final class ValidatingHydrator implements HydratorInterface
 {
     public function __construct(
-        private readonly HydratorInterface $hydrator,
-        private readonly ValidatorInterface $validator,
-        private readonly EarlyValidationResolver $earlyValidationResolver,
+        private HydratorInterface $hydrator,
+        private ValidatorInterface $validator,
+        private EarlyValidationResolver $earlyValidationResolver,
     ) {
     }
 

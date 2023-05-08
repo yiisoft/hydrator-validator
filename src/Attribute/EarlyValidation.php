@@ -15,7 +15,7 @@ final class EarlyValidation implements ParameterAttributeInterface
      * @var RuleInterface[] $rules
      * @psalm-var list<RuleInterface> $rules
      */
-    private readonly array $rules;
+    private array $rules;
 
     public function __construct(RuleInterface ...$rules)
     {
