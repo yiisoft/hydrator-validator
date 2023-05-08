@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation;
+namespace Yiisoft\Hydrator\Validator;
 
 use Yiisoft\Hydrator\Attribute\SkipHydration;
 use Yiisoft\Validator\Result;

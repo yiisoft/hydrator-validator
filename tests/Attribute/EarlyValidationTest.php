@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\Attribute;
+namespace Yiisoft\Hydrator\Validator\Tests\Attribute;
 
 use PHPUnit\Framework\TestCase;
-use Yiisoft\Input\Validation\Attribute\EarlyValidation;
-use Yiisoft\Input\Validation\Attribute\EarlyValidationResolver;
+use Yiisoft\Hydrator\Validator\Attribute\EarlyValidation;
+use Yiisoft\Hydrator\Validator\Attribute\EarlyValidationResolver;
 use Yiisoft\Validator\Rule\Length;
 use Yiisoft\Validator\Rule\Required;
 

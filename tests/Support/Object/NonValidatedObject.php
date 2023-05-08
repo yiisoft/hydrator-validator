@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\Support\Object;
+namespace Yiisoft\Hydrator\Validator\Tests\Support\Object;
 
 final class NonValidatedObject
 {

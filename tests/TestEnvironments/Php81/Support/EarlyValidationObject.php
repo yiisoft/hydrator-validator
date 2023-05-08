@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\TestEnvironments\Php81\Support;
+namespace Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support;
 
-use Yiisoft\Input\Validation\Attribute\EarlyValidation;
-use Yiisoft\Input\Validation\ValidatedObjectInterface;
-use Yiisoft\Input\Validation\ValidatedObjectTrait;
+use Yiisoft\Hydrator\Validator\Attribute\EarlyValidation;
+use Yiisoft\Hydrator\Validator\ValidatedObjectInterface;
+use Yiisoft\Hydrator\Validator\ValidatedObjectTrait;
 use Yiisoft\Validator\Rule\Length;
 use Yiisoft\Validator\Rule\Required;
 

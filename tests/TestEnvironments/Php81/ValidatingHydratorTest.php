@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\TestEnvironments\Php81;
+namespace Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81;
 
 use PHPUnit\Framework\TestCase;
-use Yiisoft\Input\Validation\Tests\Support\TestHelper;
-use Yiisoft\Input\Validation\Tests\TestEnvironments\Php81\Support\EarlyValidationObject;
+use Yiisoft\Hydrator\Validator\Tests\Support\TestHelper;
+use Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support\EarlyValidationObject;
 
 final class ValidatingHydratorTest extends TestCase
 {

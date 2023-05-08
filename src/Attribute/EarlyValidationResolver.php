@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Attribute;
+namespace Yiisoft\Hydrator\Validator\Attribute;
 
 use Yiisoft\Hydrator\Context;
 use Yiisoft\Hydrator\NotResolvedException;

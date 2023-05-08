@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\Support\Object;
+namespace Yiisoft\Hydrator\Validator\Tests\Support\Object;
 
-use Yiisoft\Input\Validation\ValidatedObjectInterface;
-use Yiisoft\Input\Validation\ValidatedObjectTrait;
+use Yiisoft\Hydrator\Validator\ValidatedObjectInterface;
+use Yiisoft\Hydrator\Validator\ValidatedObjectTrait;
 use Yiisoft\Validator\Rule\Length;
 use Yiisoft\Validator\Rule\Required;
 

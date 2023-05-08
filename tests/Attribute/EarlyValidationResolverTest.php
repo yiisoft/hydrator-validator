@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\Attribute;
+namespace Yiisoft\Hydrator\Validator\Tests\Attribute;
 
 use PHPUnit\Framework\TestCase;
 use Yiisoft\Hydrator\UnexpectedAttributeException;
-use Yiisoft\Input\Validation\Attribute\EarlyValidation;
-use Yiisoft\Input\Validation\Tests\Support\Attribute\IncorrectEarlyValidationResolver;
-use Yiisoft\Input\Validation\Tests\Support\TestHelper;
+use Yiisoft\Hydrator\Validator\Attribute\EarlyValidation;
+use Yiisoft\Hydrator\Validator\Tests\Support\Attribute\IncorrectEarlyValidationResolver;
+use Yiisoft\Hydrator\Validator\Tests\Support\TestHelper;
 
 final class EarlyValidationResolverTest extends TestCase
 {

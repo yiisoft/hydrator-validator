@@ -1,5 +1,5 @@
 {
-    "name": "yiisoft/input-validation",
+    "name": "yiisoft/hydrator-validator",
     "type": "library",
     "description": "_____",
     "keywords": [
@@ -9,12 +9,12 @@
     "homepage": "https://www.yiiframework.com/",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/input-validation/issues?state=open",
+        "issues": "https://github.com/yiisoft/hydrator-validator/issues?state=open",
         "forum": "https://www.yiiframework.com/forum/",
         "wiki": "https://www.yiiframework.com/wiki/",
         "irc": "ircs://irc.libera.chat:6697/yii",
         "chat": "https://t.me/yii3en",
-        "source": "https://github.com/yiisoft/input-validation"
+        "source": "https://github.com/yiisoft/hydrator-validator"
     },
     "funding": [
         {
@@ -43,12 +43,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Yiisoft\\Input\\Validation\\": "src"
+            "Yiisoft\\Hydrator\\Validator\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yiisoft\\Input\\Validation\\Tests\\": "tests"
+            "Yiisoft\\Hydrator\\Validator\\Tests\\": "tests"
         }
     },
     "config": {

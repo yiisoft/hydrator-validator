@@ -2,18 +2,18 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="100px">
     </a>
-    <h1 align="center">Yii Input Validation</h1>
+    <h1 align="center">Yii Validating Hydrator</h1>
     <br>
 </p>
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/input-validation/v/stable.png)](https://packagist.org/packages/yiisoft/input-validation)
-[![Total Downloads](https://poser.pugx.org/yiisoft/input-validation/downloads.png)](https://packagist.org/packages/yiisoft/input-validation)
-[![Build status](https://github.com/yiisoft/input-validation/workflows/build/badge.svg)](https://github.com/yiisoft/input-validation/actions?query=workflow%3Abuild)
-[![Code Coverage](https://codecov.io/gh/yiisoft/input-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/yiisoft/input-validation)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2Finput-validation%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/input-validation/master)
-[![static analysis](https://github.com/yiisoft/input-validation/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/input-validation/actions?query=workflow%3A%22static+analysis%22)
-[![type-coverage](https://shepherd.dev/github/yiisoft/input-validation/coverage.svg)](https://shepherd.dev/github/yiisoft/input-validation)
-[![psalm-level](https://shepherd.dev/github/yiisoft/input-validation/level.svg)](https://shepherd.dev/github/yiisoft/input-validation)
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/hydrator-validator/v/stable.png)](https://packagist.org/packages/yiisoft/hydrator-validator)
+[![Total Downloads](https://poser.pugx.org/yiisoft/hydrator-validator/downloads.png)](https://packagist.org/packages/yiisoft/hydrator-validator)
+[![Build status](https://github.com/yiisoft/hydrator-validator/workflows/build/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions?query=workflow%3Abuild)
+[![Code Coverage](https://codecov.io/gh/yiisoft/hydrator-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/yiisoft/hydrator-validator)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2Fhydrator-validator%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/hydrator-validator/master)
+[![static analysis](https://github.com/yiisoft/hydrator-validator/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions?query=workflow%3A%22static+analysis%22)
+[![type-coverage](https://shepherd.dev/github/yiisoft/hydrator-validator/coverage.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
+[![psalm-level](https://shepherd.dev/github/yiisoft/hydrator-validator/level.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
 
 The package ...
 
@@ -26,7 +26,7 @@ The package ...
 The package could be installed with composer:
 
 ```shell
-composer require yiisoft/input-validation
+composer require yiisoft/hydrator-validator
 ```
 
 ## General usage
@@ -74,7 +74,7 @@ Use [ComposerRequireChecker](https://github.com/maglnet/ComposerRequireChecker) 
 
 ## License
 
-The Yii Input Validation is free software. It is released under the terms of the BSD License.
+The Yii Validating Hydrator is free software. It is released under the terms of the BSD License.
 Please see [`LICENSE`](./LICENSE.md) for more information.
 
 Maintained by [Yii Software](https://www.yiiframework.com/).

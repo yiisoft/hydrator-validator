@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests;
+namespace Yiisoft\Hydrator\Validator\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Yiisoft\Input\Validation\Tests\Support\Object\NonValidatedObject;
-use Yiisoft\Input\Validation\Tests\Support\Object\SimpleObject;
-use Yiisoft\Input\Validation\Tests\Support\TestHelper;
+use Yiisoft\Hydrator\Validator\Tests\Support\Object\NonValidatedObject;
+use Yiisoft\Hydrator\Validator\Tests\Support\Object\SimpleObject;
+use Yiisoft\Hydrator\Validator\Tests\Support\TestHelper;
 
 final class ValidatingHydratorTest extends TestCase
 {

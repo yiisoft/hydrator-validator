@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation\Tests\Support;
+namespace Yiisoft\Hydrator\Validator\Tests\Support;
 
 use Yiisoft\Hydrator\Hydrator;
-use Yiisoft\Input\Validation\Attribute\EarlyValidationResolver;
-use Yiisoft\Input\Validation\ValidatingHydrator;
+use Yiisoft\Hydrator\Validator\Attribute\EarlyValidationResolver;
+use Yiisoft\Hydrator\Validator\ValidatingHydrator;
 use Yiisoft\Test\Support\Container\SimpleContainer;
 use Yiisoft\Validator\Validator;
 

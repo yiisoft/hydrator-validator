@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Input\Validation;
+namespace Yiisoft\Hydrator\Validator;
 
 use Yiisoft\Hydrator\HydratorInterface;
-use Yiisoft\Input\Validation\Attribute\EarlyValidationResolver;
+use Yiisoft\Hydrator\Validator\Attribute\EarlyValidationResolver;
 use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
