@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yiisoft\Hydrator\Validator;
 
 use Yiisoft\Hydrator\HydratorInterface;
-use Yiisoft\Hydrator\Validator\Attribute\EarlyValidationResolver;
+use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
@@ -14,16 +14,16 @@ final class ValidatingHydrator implements HydratorInterface
     public function __construct(
         private HydratorInterface $hydrator,
         private ValidatorInterface $validator,
-        private EarlyValidationResolver $earlyValidationResolver,
-    ) {
-    }
+        private ValidateResolver $validateResolver,
+    ) {}
 
     public function hydrate(
         object $object,
         array $data = [],
         array $map = [],
         bool $strict = false
-    ): void {
+    ): void
+    {
         $result = $this->beforeAction();
         $this->hydrator->hydrate($object, $data, $map, $strict);
         $this->afterAction($object, $result);
@@ -34,7 +34,8 @@ final class ValidatingHydrator implements HydratorInterface
         array $data = [],
         array $map = [],
         bool $strict = false
-    ): object {
+    ): object
+    {
         $result = $this->beforeAction();
         $object = $this->hydrator->create($class, $data, $map, $strict);
         $this->afterAction($object, $result);
@@ -44,7 +45,7 @@ final class ValidatingHydrator implements HydratorInterface
     private function beforeAction(): Result
     {
         $result = new Result();
-        $this->earlyValidationResolver->setResult($result);
+        $this->validateResolver->setResult($result);
         return $result;
     }
 

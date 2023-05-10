@@ -6,14 +6,14 @@ namespace Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81;
 
 use PHPUnit\Framework\TestCase;
 use Yiisoft\Hydrator\Validator\Tests\Support\TestHelper;
-use Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support\EarlyValidationObject;
+use Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support\ValidateObject;
 
 final class ValidatingHydratorTest extends TestCase
 {
-    public function testCreateWithEarlyValidation(): void
+    public function testCreateWithValidateAttribute(): void
     {
         $result = TestHelper::createValidatingHydrator()
-            ->create(EarlyValidationObject::class)
+            ->create(ValidateObject::class)
             ->getValidationResult();
 
         $this->assertFalse($result->isValid());
@@ -25,9 +25,9 @@ final class ValidatingHydratorTest extends TestCase
         );
     }
 
-    public function testHydrateWithEarlyValidation(): void
+    public function testHydrateWithValidateAttribute(): void
     {
-        $object = new EarlyValidationObject();
+        $object = new ValidateObject();
 
         TestHelper::createValidatingHydrator()->hydrate($object, ['b' => 'y', 'c' => 'z']);
 

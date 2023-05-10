@@ -6,13 +6,13 @@ namespace Yiisoft\Hydrator\Validator\Tests\Support\Attribute;
 
 use Attribute;
 use Yiisoft\Hydrator\ParameterAttributeInterface;
-use Yiisoft\Hydrator\Validator\Attribute\EarlyValidationResolver;
+use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_PARAMETER)]
-final class IncorrectEarlyValidationResolver implements ParameterAttributeInterface
+final class IncorrectValidateResolver implements ParameterAttributeInterface
 {
     public function getResolver(): string
     {
-        return EarlyValidationResolver::class;
+        return ValidateResolver::class;
     }
 }
