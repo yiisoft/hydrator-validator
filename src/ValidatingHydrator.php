@@ -15,15 +15,15 @@ final class ValidatingHydrator implements HydratorInterface
         private HydratorInterface $hydrator,
         private ValidatorInterface $validator,
         private ValidateResolver $validateResolver,
-    ) {}
+    ) {
+    }
 
     public function hydrate(
         object $object,
         array $data = [],
         array $map = [],
         bool $strict = false
-    ): void
-    {
+    ): void {
         $result = $this->beforeAction();
         $this->hydrator->hydrate($object, $data, $map, $strict);
         $this->afterAction($object, $result);
@@ -34,8 +34,7 @@ final class ValidatingHydrator implements HydratorInterface
         array $data = [],
         array $map = [],
         bool $strict = false
-    ): object
-    {
+    ): object {
         $result = $this->beforeAction();
         $object = $this->hydrator->create($class, $data, $map, $strict);
         $this->afterAction($object, $result);
