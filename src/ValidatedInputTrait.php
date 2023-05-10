@@ -7,7 +7,7 @@ namespace Yiisoft\Hydrator\Validator;
 use Yiisoft\Hydrator\Attribute\SkipHydration;
 use Yiisoft\Validator\Result;
 
-trait ValidatedObjectTrait
+trait ValidatedInputTrait
 {
     #[SkipHydration]
     private ?Result $validationResult = null;

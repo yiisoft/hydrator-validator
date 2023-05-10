@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support;
 
 use Yiisoft\Hydrator\Validator\Attribute\Validate;
-use Yiisoft\Hydrator\Validator\ValidatedObjectInterface;
-use Yiisoft\Hydrator\Validator\ValidatedObjectTrait;
+use Yiisoft\Hydrator\Validator\ValidatedInputInterface;
+use Yiisoft\Hydrator\Validator\ValidatedInputTrait;
 use Yiisoft\Validator\Rule\Length;
 use Yiisoft\Validator\Rule\Required;
 
-final class ValidateObject implements ValidatedObjectInterface
+final class ValidateInput implements ValidatedInputInterface
 {
-    use ValidatedObjectTrait;
+    use ValidatedInputTrait;
 
     public function __construct(
         #[Validate(new Required())]

@@ -51,7 +51,7 @@ final class ValidatingHydrator implements HydratorInterface
 
     private function afterAction(object $object, Result $result): void
     {
-        if (!$object instanceof ValidatedObjectInterface) {
+        if (!$object instanceof ValidatedInputInterface) {
             return;
         }
 
