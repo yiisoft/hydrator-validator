@@ -15,7 +15,8 @@
 [![type-coverage](https://shepherd.dev/github/yiisoft/hydrator-validator/coverage.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
 [![psalm-level](https://shepherd.dev/github/yiisoft/hydrator-validator/level.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
 
-The package ...
+The package provides a hydrator that also does validation, including raw data. It is useful when input data comes from
+a user and needs to be put into DTOs.
 
 ## Requirements
 
