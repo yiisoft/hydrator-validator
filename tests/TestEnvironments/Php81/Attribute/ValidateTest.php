@@ -18,7 +18,7 @@ final class ValidateTest extends TestCase
     {
         $hydrator = TestHelper::createValidatingHydrator();
 
-        $object = new class() implements ValidatedInputInterface {
+        $object = new class () implements ValidatedInputInterface {
             use ValidatedInputTrait;
 
             #[Validate(new Number(min: 7))]
