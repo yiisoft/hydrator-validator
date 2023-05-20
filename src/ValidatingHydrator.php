@@ -9,8 +9,16 @@ use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
+/**
+ * ValidatingHydrator is a decorator for {@see HydratorInterface} that validates data before hydration.
+ */
 final class ValidatingHydrator implements HydratorInterface
 {
+    /**
+     * @param HydratorInterface $hydrator Hydrator to decorate.
+     * @param ValidatorInterface $validator Validator to use.
+     * @param ValidateResolver $validateResolver Resolver for {@see Validate} attribute.
+     */
     public function __construct(
         private HydratorInterface $hydrator,
         private ValidatorInterface $validator,
