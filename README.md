@@ -45,7 +45,7 @@ use \Yiisoft\Hydrator\HydratorInterface;
 public function actionEdit(RequestInterface $request, HydratorInterface $hydrator): ResponseInterface
 {
     $data = $request->getParsedBody();    
-    $inputDto = $hydrator->create(EditActionInput $input, $data);
+    $inputDto = $hydrator->create(EditActionInput::class, $data);
     
     if (!$inputDto->getValidationResult()->isValid()) {
         // Validation didn't pass :(
@@ -55,7 +55,7 @@ public function actionEdit(RequestInterface $request, HydratorInterface $hydrato
 }
 ```
 
-The validation rules for the DTO are defined with `Validate` PHP attributes:
+The validation rules for raw values of the DTO are defined with `Validate` PHP attributes:
 
 ```php
 final class EditActionInput

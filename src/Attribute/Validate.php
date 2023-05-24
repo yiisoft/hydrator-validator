@@ -9,7 +9,7 @@ use Yiisoft\Hydrator\ParameterAttributeInterface;
 use Yiisoft\Validator\RuleInterface;
 
 /**
- * Added to either property or parameter to indicate that it should be validated. Validation rules are passed
+ * Added to either property or parameter to indicate that raw values should be validated. Validation rules are passed
  * as arguments to the attribute.
  */
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_PARAMETER | Attribute::IS_REPEATABLE)]
