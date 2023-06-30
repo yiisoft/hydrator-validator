@@ -15,8 +15,9 @@
 [![type-coverage](https://shepherd.dev/github/yiisoft/hydrator-validator/coverage.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
 [![psalm-level](https://shepherd.dev/github/yiisoft/hydrator-validator/level.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
 
-The package provides a hydrator that also does validation, including raw data. It is useful when input data comes from
-a user and needs to be put into DTOs.
+The package provides [a hydrator](https://github.com/yiisoft/hydrator)
+that also does [validation](https://github.com/yiisoft/validator), including raw data.
+It's useful when input data comes from a user, and you need to validate it and then put it into DTOs.
 
 ## Requirements
 
@@ -31,6 +32,43 @@ composer require yiisoft/hydrator-validator
 ```
 
 ## General usage
+
+Validating hydrator is a decorator for [another hydrator](https://github.com/yiisoft/hydrator).
+It validates data before passing it to the decorated hydrator.
+
+To use it, the object being validated must implement `ValidatedInputInterface`.
+Validation result could be obtained via its `getValidationResult()` method.
+
+```php
+use \Yiisoft\Hydrator\HydratorInterface;
+
+public function actionEdit(RequestInterface $request, HydratorInterface $hydrator): ResponseInterface
+{
+    $data = $request->getParsedBody();    
+    $inputDto = $hydrator->create(EditActionInput::class, $data);
+    
+    if (!$inputDto->getValidationResult()->isValid()) {
+        // Validation didn't pass :(
+    }
+    
+    // Everything is fine. You can use $inputDto now.    
+}
+```
+
+The validation rules for raw values of the DTO are defined with `Validate` PHP attributes:
+
+```php
+final class EditActionInput
+{
+    #[Validate(Email::rule())]
+    private string $email;
+    
+    #[Validate(Required::rule())]
+    private string $name;
+    
+    // ...
+}
+```
 
 ## Testing
 

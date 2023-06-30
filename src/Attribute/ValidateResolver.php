@@ -12,15 +12,29 @@ use Yiisoft\Hydrator\UnexpectedAttributeException;
 use Yiisoft\Validator\Result as ValidationResult;
 use Yiisoft\Validator\ValidatorInterface;
 
+/**
+ * Resolver for {@see Validate} attribute.
+ */
 final class ValidateResolver implements ParameterAttributeResolverInterface
 {
+    /**
+     * @var ValidationResult|null Validation result.
+     */
     private ?ValidationResult $result = null;
 
+    /**
+     * @param ValidatorInterface $validator Validator to use.
+     */
     public function __construct(
         private ValidatorInterface $validator,
     ) {
     }
 
+    /**
+     * Sets validation result.
+     *
+     * @param ValidationResult|null $result Validation result.
+     */
     public function setResult(?ValidationResult $result): void
     {
         $this->result = $result;
