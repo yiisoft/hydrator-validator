@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Yiisoft\Hydrator\Validator\Attribute;
 
 use Yiisoft\Hydrator\Context;
-use Yiisoft\Hydrator\NotResolvedException;
 use Yiisoft\Hydrator\ParameterAttributeInterface;
 use Yiisoft\Hydrator\ParameterAttributeResolverInterface;
+use Yiisoft\Hydrator\Result;
 use Yiisoft\Hydrator\UnexpectedAttributeException;
-use Yiisoft\Validator\Result;
+use Yiisoft\Validator\Result as ValidationResult;
 use Yiisoft\Validator\ValidatorInterface;
 
 /**
@@ -18,9 +18,9 @@ use Yiisoft\Validator\ValidatorInterface;
 final class ValidateResolver implements ParameterAttributeResolverInterface
 {
     /**
-     * @var Result|null Validation result.
+     * @var ValidationResult|null Validation result.
      */
-    private ?Result $result = null;
+    private ?ValidationResult $result = null;
 
     /**
      * @param ValidatorInterface $validator Validator to use.
@@ -33,14 +33,14 @@ final class ValidateResolver implements ParameterAttributeResolverInterface
     /**
      * Sets validation result.
      *
-     * @param Result|null $result Validation result.
+     * @param ValidationResult|null $result Validation result.
      */
-    public function setResult(?Result $result): void
+    public function setResult(?ValidationResult $result): void
     {
         $this->result = $result;
     }
 
-    public function getParameterValue(ParameterAttributeInterface $attribute, Context $context): mixed
+    public function getParameterValue(ParameterAttributeInterface $attribute, Context $context): Result
     {
         if (!$attribute instanceof Validate) {
             throw new UnexpectedAttributeException(Validate::class, $attribute);
@@ -62,6 +62,6 @@ final class ValidateResolver implements ParameterAttributeResolverInterface
             }
         }
 
-        throw new NotResolvedException();
+        return Result::fail();
     }
 }
