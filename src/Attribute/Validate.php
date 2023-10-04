@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yiisoft\Hydrator\Validator\Attribute;
 
 use Attribute;
-use Yiisoft\Hydrator\ParameterAttributeInterface;
+use Yiisoft\Hydrator\Attribute\Parameter\ParameterAttributeInterface;
 use Yiisoft\Validator\RuleInterface;
 
 /**
