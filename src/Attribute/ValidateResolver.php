@@ -43,8 +43,7 @@ final class ValidateResolver implements ParameterAttributeResolverInterface
     public function getParameterValue(
         ParameterAttributeInterface $attribute,
         ParameterAttributeResolveContext $context,
-    ): Result
-    {
+    ): Result {
         if (!$attribute instanceof Validate) {
             throw new UnexpectedAttributeException(Validate::class, $attribute);
         }
