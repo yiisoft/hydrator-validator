@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Yiisoft\Hydrator\Validator\Attribute;
 
-use Yiisoft\Hydrator\Context;
-use Yiisoft\Hydrator\ParameterAttributeInterface;
-use Yiisoft\Hydrator\ParameterAttributeResolverInterface;
+use Yiisoft\Hydrator\Attribute\Parameter\ParameterAttributeInterface;
+use Yiisoft\Hydrator\Attribute\Parameter\ParameterAttributeResolverInterface;
+use Yiisoft\Hydrator\AttributeHandling\Exception\UnexpectedAttributeException;
+use Yiisoft\Hydrator\AttributeHandling\ParameterAttributeResolveContext;
 use Yiisoft\Hydrator\Result;
-use Yiisoft\Hydrator\UnexpectedAttributeException;
 use Yiisoft\Validator\Result as ValidationResult;
 use Yiisoft\Validator\ValidatorInterface;
 
@@ -40,7 +40,10 @@ final class ValidateResolver implements ParameterAttributeResolverInterface
         $this->result = $result;
     }
 
-    public function getParameterValue(ParameterAttributeInterface $attribute, Context $context): Result
+    public function getParameterValue(
+        ParameterAttributeInterface $attribute,
+        ParameterAttributeResolveContext $context,
+    ): Result
     {
         if (!$attribute instanceof Validate) {
             throw new UnexpectedAttributeException(Validate::class, $attribute);

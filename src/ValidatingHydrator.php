@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Hydrator\Validator;
 
+use Yiisoft\Hydrator\DataInterface;
 use Yiisoft\Hydrator\HydratorInterface;
 use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 use Yiisoft\Validator\Result;
@@ -26,25 +27,17 @@ final class ValidatingHydrator implements HydratorInterface
     ) {
     }
 
-    public function hydrate(
-        object $object,
-        array $data = [],
-        array $map = [],
-        bool $strict = false
-    ): void {
+    public function hydrate(object $object, array|DataInterface $data = []): void
+    {
         $result = $this->beforeAction();
-        $this->hydrator->hydrate($object, $data, $map, $strict);
+        $this->hydrator->hydrate($object, $data);
         $this->afterAction($object, $result);
     }
 
-    public function create(
-        string $class,
-        array $data = [],
-        array $map = [],
-        bool $strict = false
-    ): object {
+    public function create(string $class, array|DataInterface $data = []): object
+    {
         $result = $this->beforeAction();
-        $object = $this->hydrator->create($class, $data, $map, $strict);
+        $object = $this->hydrator->create($class, $data);
         $this->afterAction($object, $result);
         return $object;
     }
