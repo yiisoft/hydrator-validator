@@ -30,7 +30,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.0",
-        "yiisoft/hydrator": "dev-master",
+        "yiisoft/hydrator": "^1.0",
         "yiisoft/validator": "^1.1"
     },
     "require-dev": {
