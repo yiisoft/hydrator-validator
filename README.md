@@ -33,19 +33,45 @@ composer require yiisoft/hydrator-validator
 
 ## General usage
 
-Validating hydrator is a decorator for [another hydrator](https://github.com/yiisoft/hydrator).
-It validates data before passing it to the decorated hydrator.
+Validating hydrator is a decorator for [another hydrator](https://github.com/yiisoft/hydrator). It allows to validate
+raw data before passing it to the decorated hydrator and to validate object after creating or populating.
 
-To use it, the object being validated must implement `ValidatedInputInterface`.
-Validation result could be obtained via its `getValidationResult()` method.
+To use it, the object being validated must implement `ValidatedInputInterface`. You can use `ValidatedInputTrait` to 
+easily create such object. The validation rules for raw values of the object are defined with `Validate` PHP attribute.
+
+Example of object:
 
 ```php
-use \Yiisoft\Hydrator\HydratorInterface;
+use Yiisoft\Hydrator\Validator\Attribute\Validate;
+use Yiisoft\Hydrator\Validator\ValidatedInputInterface;
+use Yiisoft\Hydrator\Validator\ValidatedInputTrait;
+use Yiisoft\Validator\Rule\Email;
+use Yiisoft\Validator\Rule\Required;
 
-public function actionEdit(RequestInterface $request, HydratorInterface $hydrator): ResponseInterface
+final class InputDto implements ValidatedInputInterface 
+{
+    use ValidatedInputTrait;
+    
+    #[Email]
+    private string $email;
+    
+    #[Validate(new Required())]
+    private string $name;
+}
+```
+
+Validation result could be obtained via its `getValidationResult()` method.
+
+Validating hydrator usage example: 
+
+```php
+use Yiisoft\Hydrator\HydratorInterface;
+use Yiisoft\Hydrator\Validator\ValidatingHydrator;
+
+public function actionEdit(RequestInterface $request, ValidatingHydrator $hydrator): ResponseInterface
 {
     $data = $request->getParsedBody();    
-    $inputDto = $hydrator->create(EditActionInput::class, $data);
+    $inputDto = $hydrator->create(InputDto::class, $data);
     
     if (!$inputDto->getValidationResult()->isValid()) {
         // Validation didn't pass :(
@@ -55,61 +81,9 @@ public function actionEdit(RequestInterface $request, HydratorInterface $hydrato
 }
 ```
 
-The validation rules for raw values of the DTO are defined with `Validate` PHP attributes:
+## Documentation
 
-```php
-final class EditActionInput
-{
-    #[Validate(Email::rule())]
-    private string $email;
-    
-    #[Validate(Required::rule())]
-    private string $name;
-    
-    // ...
-}
-```
-
-## Testing
-
-### Unit testing
-
-The package is tested with [PHPUnit](https://phpunit.de/). To run tests:
-
-```shell
-./vendor/bin/phpunit
-```
-
-### Mutation testing
-
-The package tests are checked with [Infection](https://infection.github.io/) mutation framework with
-[Infection Static Analysis Plugin](https://github.com/Roave/infection-static-analysis-plugin). To run it:
-
-```shell
-./vendor/bin/roave-infection-static-analysis-plugin
-```
-
-### Static analysis
-
-The code is statically analyzed with [Psalm](https://psalm.dev/). To run static analysis:
-
-```shell
-./vendor/bin/psalm
-```
-
-### Code style
-
-Use [Rector](https://github.com/rectorphp/rector) to make codebase follow some specific rules or 
-use either newest or any specific version of PHP: 
-
-```shell
-./vendor/bin/rector
-```
-
-### Dependencies
-
-Use [ComposerRequireChecker](https://github.com/maglnet/ComposerRequireChecker) to detect transitive 
-[Composer](https://getcomposer.org/) dependencies.
+- [Internals](docs/internals.md)
 
 ## License
 
