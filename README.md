@@ -9,7 +9,7 @@
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/hydrator-validator/v/stable.png)](https://packagist.org/packages/yiisoft/hydrator-validator)
 [![Total Downloads](https://poser.pugx.org/yiisoft/hydrator-validator/downloads.png)](https://packagist.org/packages/yiisoft/hydrator-validator)
 [![Build status](https://github.com/yiisoft/hydrator-validator/workflows/build/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions?query=workflow%3Abuild)
-[![Code Coverage](https://codecov.io/gh/yiisoft/hydrator-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/yiisoft/hydrator-validator)
+[![codecov](https://codecov.io/gh/yiisoft/hydrator-validator/graph/badge.svg?token=vfLtWNY7nu)](https://codecov.io/gh/yiisoft/hydrator-validator)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2Fhydrator-validator%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/hydrator-validator/master)
 [![static analysis](https://github.com/yiisoft/hydrator-validator/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yiisoft/hydrator-validator/coverage.svg)](https://shepherd.dev/github/yiisoft/hydrator-validator)
