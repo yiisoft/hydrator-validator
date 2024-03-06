@@ -19,9 +19,8 @@ interface ValidatedInputInterface extends PostValidationHookInterface
     /**
      * Returns validation result.
      *
-     * @return Result Validation result.
-     *
      * @throws LogicException When validation result is not set.
+     * @return Result Validation result.
      */
     public function getValidationResult(): Result;
 }
