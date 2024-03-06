@@ -1,8 +1,9 @@
 # Yii Validating Hydrator Change Log
 
-## 1.0.1 under development
+## 2.0.0 under development
 
-- no changes in this release.
+- Chg #17: Throws `LogicException` on call `ValidatedInputInterface::getValidatedInput()` method when object is not
+  validated (@vjik)
 
 ## 1.0.0 February 02, 2024
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Hydrator\Validator;
 
+use LogicException;
 use Yiisoft\Validator\PostValidationHookInterface;
 use Yiisoft\Validator\Result;
 
@@ -18,7 +19,8 @@ interface ValidatedInputInterface extends PostValidationHookInterface
     /**
      * Returns validation result.
      *
-     * @return Result|null Validation result.
+     * @throws LogicException When validation result is not set.
+     * @return Result Validation result.
      */
-    public function getValidationResult(): ?Result;
+    public function getValidationResult(): Result;
 }
