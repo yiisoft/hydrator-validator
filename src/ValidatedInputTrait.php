@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Hydrator\Validator;
 
+use LogicException;
 use Yiisoft\Hydrator\Attribute\SkipHydration;
 use Yiisoft\Validator\Result;
 
@@ -23,8 +24,12 @@ trait ValidatedInputTrait
         $this->validationResult = $result;
     }
 
-    public function getValidationResult(): ?Result
+    public function getValidationResult(): Result
     {
+        if (empty($this->validationResult)) {
+            throw new LogicException('Validation result is not set.');
+        }
+
         return $this->validationResult;
     }
 }
