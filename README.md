@@ -36,7 +36,7 @@ composer require yiisoft/hydrator-validator
 Validating hydrator is a [hydrator](https://github.com/yiisoft/hydrator) decorator that allows to validate
 raw data before passing it to the decorated hydrator and to validate object after creating or populating it.
 
-To use it, the object being validated must implement `ValidatedInputInterface`. You can use `ValidatedInputTrait` to 
+To use it, the object being validated must implement `ValidatedInputInterface`. You can use `ValidatedInputTrait` to
 easily create such object. The validation rules for raw values of the object are defined with `Validate` PHP attribute.
 
 Example of object:
@@ -62,7 +62,7 @@ final class InputDto implements ValidatedInputInterface
 
 Validation result could be obtained via its `getValidationResult()` method.
 
-Validating hydrator usage example: 
+Validating hydrator usage example:
 
 ```php
 use Yiisoft\Hydrator\HydratorInterface;
@@ -85,12 +85,10 @@ public function actionEdit(RequestInterface $request, ValidatingHydrator $hydrat
 
 - [Internals](docs/internals.md)
 
-## License
+## Support
 
-The Yii Validating Hydrator is free software. It is released under the terms of the BSD License.
-Please see [`LICENSE`](./LICENSE.md) for more information.
-
-Maintained by [Yii Software](https://www.yiiframework.com/).
+If you need help or have a question, the [Yii Forum](https://forum.yiiframework.com/c/yii-3-0/63) is a good place for that.
+You may also check out other [Yii Community Resources](https://www.yiiframework.com/community).
 
 ## Support the project
 
@@ -103,3 +101,10 @@ Maintained by [Yii Software](https://www.yiiframework.com/).
 [![Telegram](https://img.shields.io/badge/telegram-join-1DA1F2?style=flat&logo=telegram)](https://t.me/yii3en)
 [![Facebook](https://img.shields.io/badge/facebook-join-1DA1F2?style=flat&logo=facebook&logoColor=ffffff)](https://www.facebook.com/groups/yiitalk)
 [![Slack](https://img.shields.io/badge/slack-join-1DA1F2?style=flat&logo=slack)](https://yiiframework.com/go/slack)
+
+## License
+
+The Yii Validating Hydrator is free software. It is released under the terms of the BSD License.
+Please see [`LICENSE`](./LICENSE.md) for more information.
+
+Maintained by [Yii Software](https://www.yiiframework.com/).
