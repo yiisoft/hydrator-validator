@@ -1,4 +1,4 @@
-# Upgrading Instructions for Yii Validating Hydrator
+# Yii Validating Hydrator Upgrading Instructions
 
 ## Upgrade from 1.x to 2.x
 
