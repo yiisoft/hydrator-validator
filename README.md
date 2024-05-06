@@ -25,7 +25,7 @@ It's useful when input data comes from a user, and you need to validate it and t
 
 ## Installation
 
-The package could be installed via [composer](https://getcomposer.org/download/)
+The package could be installed with [Composer](https://getcomposer.org):
 
 ```shell
 composer require yiisoft/hydrator-validator
