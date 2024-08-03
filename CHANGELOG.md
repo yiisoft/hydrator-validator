@@ -2,7 +2,7 @@
 
 ## 2.0.1 under development
 
-- no changes in this release.
+- Enh #24: Add `yiisoft/validator` of version `^2.0` support (@vjik)
 
 ## 2.0.0 March 06, 2024
 
