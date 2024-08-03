@@ -15,7 +15,7 @@ final class SimpleInput implements ValidatedInputInterface
 
     public function __construct(
         #[Required]
-        #[Length(min: 3)]
+        #[Length(min: 3, lessThanMinMessage: 'This value must contain at least 3 characters.')]
         public string $firstName = '',
         #[Length(min: 3, skipOnEmpty: true)]
         public string $lastName = '',
