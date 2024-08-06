@@ -1,6 +1,6 @@
 # Yii Validating Hydrator Change Log
 
-## 2.0.1 under development
+## 2.0.1 August 06, 2024
 
 - Enh #24: Add `yiisoft/validator` of version `^2.0` support (@vjik)
 
