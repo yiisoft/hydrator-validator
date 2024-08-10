@@ -11,7 +11,7 @@ use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
 /**
- * `ValidatingHydrator` is a decorator for {@see HydratorInterface} that validates data before hydration.
+ * `ValidatingHydrator` is a decorator for {@see HydratorInterface} that validates data after hydration.
  */
 final class ValidatingHydrator implements HydratorInterface
 {

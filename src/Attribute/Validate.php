@@ -9,8 +9,8 @@ use Yiisoft\Hydrator\Attribute\Parameter\ParameterAttributeInterface;
 use Yiisoft\Validator\RuleInterface;
 
 /**
- * Added to either property or parameter to indicate that raw values should be validated. Validation rules are passed
- * as arguments to the attribute.
+ * Added to either property or parameter to indicate that raw values should be validated. Validation rules are passed as
+ * arguments to the attribute.
  */
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_PARAMETER | Attribute::IS_REPEATABLE)]
 final class Validate implements ParameterAttributeInterface
