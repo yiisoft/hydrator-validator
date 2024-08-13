@@ -69,7 +69,7 @@ corresponding [validator's guide section](https://github.com/yiisoft/validator/b
 Validating hydrator usage example:
 
 ```php
-use Yiisoft\Hydrator\HydratorInterface;
+use Psr\Http\Message\RequestInterface;
 use Yiisoft\Hydrator\Validator\ValidatingHydrator;
 
 public function actionEdit(RequestInterface $request, ValidatingHydrator $hydrator): ResponseInterface
