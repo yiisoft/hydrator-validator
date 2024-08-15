@@ -35,8 +35,7 @@ composer require yiisoft/hydrator-validator
 
 Validating hydrator is a decorator for [hydrator](https://github.com/yiisoft/hydrator):
 
-- it allows to validate raw data of properties marked with `Validate` PHP attribute before passing it to the decorated 
-hydrator;
+- it allows to validate raw data of properties marked with `Validate` PHP attribute;
 - it allows to validate object after creating or populating it.
 
 To use it, the object being validated must implement `ValidatedInputInterface`. You can use `ValidatedInputTrait` to
