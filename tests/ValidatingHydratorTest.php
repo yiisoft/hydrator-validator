@@ -64,7 +64,7 @@ final class ValidatingHydratorTest extends TestCase
     public function testValidateResolverCleanupAfterCreate(): void
     {
         $object = new SimpleInput();
-        
+
         $validatingHydrator = TestHelper::createValidatingHydrator();
         $validatingHydrator->hydrate($object, ['firstName' => 'Bo']);
 
