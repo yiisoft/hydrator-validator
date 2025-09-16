@@ -55,6 +55,8 @@ final class ValidatingHydrator implements HydratorInterface
 
     private function afterAction(object $object, Result $result): void
     {
+        $this->validateResolver->setResult(null);
+
         if (!$object instanceof ValidatedInputInterface) {
             return;
         }
