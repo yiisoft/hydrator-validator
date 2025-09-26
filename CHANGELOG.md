@@ -3,7 +3,7 @@
 ## 2.0.2 under development
 
 - Chg #29: Change PHP constraint in `composer.json` to `8.0 - 8.4` (@vjik)
-- Chg #31: Clear the `result` property of the `ValidateResolver` object after hydration (@olegbaturin)
+- Bug #31: Clear the `result` property of the `ValidateResolver` object after hydration (@olegbaturin)
 
 ## 2.0.1 August 06, 2024
 

@@ -7,7 +7,6 @@ namespace Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81;
 use PHPUnit\Framework\TestCase;
 use Yiisoft\Hydrator\AttributeHandling\ResolverFactory\ContainerAttributeResolverFactory;
 use Yiisoft\Hydrator\Hydrator;
-use Yiisoft\Hydrator\ObjectFactory\ContainerObjectFactory;
 use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 use Yiisoft\Hydrator\Validator\Tests\Support\TestHelper;
 use Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support\ValidateInput;
