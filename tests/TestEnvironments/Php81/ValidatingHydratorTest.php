@@ -51,7 +51,7 @@ final class ValidatingHydratorTest extends TestCase
         $this->assertSame('z', $object->c);
     }
 
-    public function testValidateResolverCleanupAfterCreate1(): void
+    public function testValidateResolverCleanupAfterCreate(): void
     {
         $validator = new Validator();
         $validateResolver = new ValidateResolver($validator);
@@ -59,7 +59,6 @@ final class ValidatingHydratorTest extends TestCase
             [
                 ValidateResolver::class => $validateResolver,
             ],
-            static fn(string $class) => new $class(),
         );
 
         $hydrator = new Hydrator(
