@@ -15,7 +15,7 @@ final class ValidateInput implements ValidatedInputInterface
     use ValidatedInputTrait;
 
     public function __construct(
-        #[Validate(new Required())]
+        #[Validate(new Required(notPassedMessage: 'Value not passed.'))]
         #[Length(min: 3)]
         public string $a = '.',
         public string $b = '.',

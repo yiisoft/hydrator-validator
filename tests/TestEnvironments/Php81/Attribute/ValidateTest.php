@@ -31,7 +31,7 @@ final class ValidateTest extends TestCase
         $this->assertInstanceOf(Result::class, $result);
         $this->assertSame(
             ['value' => ['Value must be no less than 7.']],
-            $result->getErrorMessagesIndexedByAttribute()
+            $result->getErrorMessagesIndexedByPath(),
         );
     }
 }

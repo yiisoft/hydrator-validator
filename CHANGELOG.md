@@ -1,8 +1,13 @@
 # Yii Validating Hydrator Change Log
 
-## 2.0.1 under development
+## 2.0.2 under development
 
-- no changes in this release.
+- Chg #29: Change PHP constraint in `composer.json` to `8.0 - 8.4` (@vjik)
+- Bug #31: Clear the `result` property of the `ValidateResolver` object after hydration (@olegbaturin)
+
+## 2.0.1 August 06, 2024
+
+- Enh #24: Add `yiisoft/validator` of version `^2.0` support (@vjik)
 
 ## 2.0.0 March 06, 2024
 

@@ -6,9 +6,9 @@
     <br>
 </p>
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/hydrator-validator/v/stable.png)](https://packagist.org/packages/yiisoft/hydrator-validator)
-[![Total Downloads](https://poser.pugx.org/yiisoft/hydrator-validator/downloads.png)](https://packagist.org/packages/yiisoft/hydrator-validator)
-[![Build status](https://github.com/yiisoft/hydrator-validator/workflows/build/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions?query=workflow%3Abuild)
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/hydrator-validator/v)](https://packagist.org/packages/yiisoft/hydrator-validator)
+[![Total Downloads](https://poser.pugx.org/yiisoft/hydrator-validator/downloads)](https://packagist.org/packages/yiisoft/hydrator-validator)
+[![Build status](https://github.com/yiisoft/hydrator-validator/actions/workflows/build.yml/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/yiisoft/hydrator-validator/graph/badge.svg?token=vfLtWNY7nu)](https://codecov.io/gh/yiisoft/hydrator-validator)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2Fhydrator-validator%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/hydrator-validator/master)
 [![static analysis](https://github.com/yiisoft/hydrator-validator/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/hydrator-validator/actions?query=workflow%3A%22static+analysis%22)
@@ -33,8 +33,10 @@ composer require yiisoft/hydrator-validator
 
 ## General usage
 
-Validating hydrator is a [hydrator](https://github.com/yiisoft/hydrator) decorator that allows to validate
-raw data before passing it to the decorated hydrator and to validate object after creating or populating it.
+Validating hydrator is a decorator for [hydrator](https://github.com/yiisoft/hydrator) that allows to validate:
+
+- raw data of properties marked with `Validate` PHP attribute;
+- an object after creating or populating it.
 
 To use it, the object being validated must implement `ValidatedInputInterface`. You can use `ValidatedInputTrait` to
 easily create such object. The validation rules for raw values of the object are defined with `Validate` PHP attribute.
@@ -60,12 +62,13 @@ final class InputDto implements ValidatedInputInterface
 }
 ```
 
-Validation result could be obtained via `getValidationResult()` method.
+Validation result could be obtained via `getValidationResult()` method. For further working with result, refer to 
+corresponding [validator's guide section](https://github.com/yiisoft/validator/blob/master/docs/guide/en/result.md).
 
 Validating hydrator usage example:
 
 ```php
-use Yiisoft\Hydrator\HydratorInterface;
+use Psr\Http\Message\RequestInterface;
 use Yiisoft\Hydrator\Validator\ValidatingHydrator;
 
 public function actionEdit(RequestInterface $request, ValidatingHydrator $hydrator): ResponseInterface

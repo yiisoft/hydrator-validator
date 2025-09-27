@@ -9,8 +9,7 @@ use Yiisoft\Validator\PostValidationHookInterface;
 use Yiisoft\Validator\Result;
 
 /**
- * `ValidatedInputInterface` is an interface for objects that can be validated.
- * It provides a method to get validation result.
+ * Used for objects that can be validated. It provides a method to get validation result.
  *
  * You can use {@see ValidatedInputTrait} to implement this interface.
  */

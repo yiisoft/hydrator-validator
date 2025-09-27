@@ -11,7 +11,11 @@ use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
 
 /**
- * `ValidatingHydrator` is a decorator for {@see HydratorInterface} that validates data before hydration.
+ * `ValidatingHydrator` is a decorator for {@see HydratorInterface}:
+ *
+ * - it allows to validate raw data of properties marked with {@see Validate} PHP attribute before passing it to the
+ * decorated hydrator;
+ * - it allows to validate object after creating or populating it.
  */
 final class ValidatingHydrator implements HydratorInterface
 {
@@ -51,6 +55,8 @@ final class ValidatingHydrator implements HydratorInterface
 
     private function afterAction(object $object, Result $result): void
     {
+        $this->validateResolver->setResult(null);
+
         if (!$object instanceof ValidatedInputInterface) {
             return;
         }
