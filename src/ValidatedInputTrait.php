@@ -33,7 +33,7 @@ trait ValidatedInputTrait
         return $this->validationResult;
     }
 
-    public function resetValidation(): void
+    public function resetValidationResult(): void
     {
         $this->validationResult = null;
     }
