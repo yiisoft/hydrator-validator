@@ -1,5 +1,9 @@
 # Yii Validating Hydrator Change Log
 
+## 2.0.3 under development
+
+- no changes in this release.
+
 ## 2.0.2 December 16, 2025
 
 - Chg #29, #33: Change PHP constraint in `composer.json` to `8.0 - 8.5` (@vjik)
