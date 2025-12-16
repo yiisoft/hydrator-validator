@@ -27,7 +27,7 @@
         }
     ],
     "require": {
-        "php": "8.0 - 8.4",
+        "php": "8.0 - 8.5",
         "yiisoft/hydrator": "^1.0",
         "yiisoft/validator": "^1.0 || ^2.0"
     },
