@@ -21,7 +21,7 @@ It's useful when input data comes from a user, and you need to validate it and t
 
 ## Requirements
 
-- PHP 8.0 or higher.
+- PHP 8.0 - 8.5.
 
 ## Installation
 
