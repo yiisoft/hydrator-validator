@@ -27,8 +27,7 @@ final class ValidateResolver implements ParameterAttributeResolverInterface
      */
     public function __construct(
         private ValidatorInterface $validator,
-    ) {
-    }
+    ) {}
 
     /**
      * Sets validation result.

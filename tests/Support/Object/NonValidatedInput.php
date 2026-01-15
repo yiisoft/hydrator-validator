@@ -8,6 +8,5 @@ final class NonValidatedInput
 {
     public function __construct(
         public int $a = 0,
-    ) {
-    }
+    ) {}
 }

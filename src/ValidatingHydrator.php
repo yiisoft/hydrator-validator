@@ -28,8 +28,7 @@ final class ValidatingHydrator implements HydratorInterface
         private HydratorInterface $hydrator,
         private ValidatorInterface $validator,
         private ValidateResolver $validateResolver,
-    ) {
-    }
+    ) {}
 
     public function hydrate(object $object, array|DataInterface $data = []): void
     {
