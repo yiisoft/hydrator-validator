@@ -14,7 +14,7 @@ final class ValidateResolverTest extends TestCase
 {
     public function testInvalidAttribute(): void
     {
-        $object = new class () {
+        $object = new class {
             #[IncorrectValidateResolver]
             public int $a;
         };

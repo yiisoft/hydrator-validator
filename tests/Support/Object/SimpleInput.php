@@ -19,6 +19,5 @@ final class SimpleInput implements ValidatedInputInterface
         public string $firstName = '',
         #[Length(min: 3, skipOnEmpty: true)]
         public string $lastName = '',
-    ) {
-    }
+    ) {}
 }

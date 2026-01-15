@@ -30,7 +30,7 @@ final class TestHelper
             new Hydrator(
                 attributeResolverFactory: new ContainerAttributeResolverFactory($container),
                 objectFactory: new ContainerObjectFactory(
-                    new Injector($container)
+                    new Injector($container),
                 ),
             ),
             $validator,
