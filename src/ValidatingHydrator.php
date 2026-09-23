@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Yiisoft\Hydrator\Validator;
 
+use ReflectionClass;
 use Yiisoft\Hydrator\DataInterface;
 use Yiisoft\Hydrator\HydratorInterface;
+use Yiisoft\Hydrator\Validator\Attribute\Validate;
 use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 use Yiisoft\Validator\Result;
 use Yiisoft\Validator\ValidatorInterface;
@@ -33,16 +35,28 @@ final class ValidatingHydrator implements HydratorInterface
     public function hydrate(object $object, array|DataInterface $data = []): void
     {
         $result = $this->beforeAction();
-        $this->hydrator->hydrate($object, $data);
-        $this->afterAction($object, $result);
+
+        try {
+            $this->validateClass($object::class, $data, $result);
+            $this->hydrator->hydrate($object, $data);
+            $this->afterAction($object, $result);
+        } finally {
+            $this->validateResolver->setResult(null);
+        }
     }
 
     public function create(string $class, array|DataInterface $data = []): object
     {
         $result = $this->beforeAction();
-        $object = $this->hydrator->create($class, $data);
-        $this->afterAction($object, $result);
-        return $object;
+
+        try {
+            $this->validateClass($class, $data, $result);
+            $object = $this->hydrator->create($class, $data);
+            $this->afterAction($object, $result);
+            return $object;
+        } finally {
+            $this->validateResolver->setResult(null);
+        }
     }
 
     private function beforeAction(): Result
@@ -52,10 +66,30 @@ final class ValidatingHydrator implements HydratorInterface
         return $result;
     }
 
+    private function validateClass(string $class, array|DataInterface $data, Result $result): void
+    {
+        if (!class_exists($class)) {
+            return;
+        }
+
+        /** @var class-string $class */
+        $reflection = new ReflectionClass($class);
+
+        foreach ($reflection->getAttributes(Validate::class) as $reflectionAttribute) {
+            $validationResult = $this->validator->validate($data, $reflectionAttribute->newInstance()->getRules());
+
+            foreach ($validationResult->getErrors() as $error) {
+                $result->addError(
+                    $error->getMessage(),
+                    $error->getParameters(),
+                    $error->getValuePath(),
+                );
+            }
+        }
+    }
+
     private function afterAction(object $object, Result $result): void
     {
-        $this->validateResolver->setResult(null);
-
         if (!$object instanceof ValidatedInputInterface) {
             return;
         }

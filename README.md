@@ -35,11 +35,42 @@ composer require yiisoft/hydrator-validator
 
 Validating hydrator is a decorator for [hydrator](https://github.com/yiisoft/hydrator) that allows to validate:
 
-- raw data of properties marked with `Validate` PHP attribute;
+- complete raw input for classes marked with `Validate` PHP attribute;
+- raw data of properties or parameters marked with `Validate` PHP attribute;
 - an object after creating or populating it.
 
 To use it, the object being validated must implement `ValidatedInputInterface`. You can use `ValidatedInputTrait` to
 easily create such object. The validation rules for raw values of the object are defined with `Validate` PHP attribute.
+
+### Class-level raw validation
+
+`Validate` is repeatable on a class. Each class-level attribute receives the complete original input before hydration:
+arrays are passed unchanged, while a `DataInterface` instance is passed unchanged (it cannot be generically enumerated).
+The built-in `Required` rule below checks that the complete raw input is present. Custom class-level rules can validate relationships between fields, reject unknown keys, or inspect values before they are cast.
+
+```php
+use Yiisoft\Hydrator\Validator\Attribute\Validate;
+use Yiisoft\Hydrator\Validator\ValidatedInputInterface;
+use Yiisoft\Hydrator\Validator\ValidatedInputTrait;
+use Yiisoft\Validator\Rule\Required;
+
+#[Validate(new Required())]
+final class RegistrationInput implements ValidatedInputInterface
+{
+    use ValidatedInputTrait;
+
+    public string $password = '';
+    public string $passwordConfirmation = '';
+}
+```
+
+Valid input passes class-level raw validation and continues through hydration. An empty input is still passed to class
+rules, and unknown keys remain visible to them. Invalid raw values are checked before hydration, so rules see the
+original values rather than hydrated/cast ones. Multiple `Validate` attributes are all evaluated, and all their errors
+are appended to property/parameter raw-validation errors. Hydration is not short-circuited by any raw error: the object
+is hydrated so its raw result can be inspected. If raw validation fails, post-hydration object validation is skipped and
+the collected raw result is stored; if raw validation succeeds, post-hydration validation runs normally. This lifecycle
+applies to both `create()` and `hydrate()`.
 
 Example of object:
 
