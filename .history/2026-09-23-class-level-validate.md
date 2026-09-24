@@ -15,7 +15,7 @@ Extend the existing repeatable `Validate` attribute to classes and run those val
 ## Validation
 
 - Before implementation, focused regression tests failed for the expected unsupported class-level behavior (7 tests, 14 assertions, 4 failures).
-- After implementation, full PHPUnit passed (20 tests, 52 assertions) in Docker PHP 8.5.10.
+- After implementation, full PHPUnit passed (22 tests, 58 assertions) in Docker PHP 8.4.24; the CI PHP/dependency matrix and mutation tests also passed.
 - Psalm passed with no errors and 100% type inference.
 - PHP-CS-Fixer dry-run and `git diff --check` passed.
 
