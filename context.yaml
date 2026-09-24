@@ -1,0 +1,18 @@
+$schema: 'https://raw.githubusercontent.com/context-hub/generator/refs/heads/main/json-schema.json'
+documents:
+  -
+    description: 'PHP Project Structure'
+    outputPath: docs/php-structure.md
+    overwrite: true
+    sources:
+      -
+        type: tree
+        description: 'PHP Directory Structure'
+        sourcePaths:
+          - src
+          - tests
+        filePattern: '*'
+        renderFormat: ascii
+        enabled: true
+        showCharCount: true
+        maxDepth: 3
