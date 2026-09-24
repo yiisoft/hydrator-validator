@@ -2,7 +2,7 @@
 
 ## 2.0.3 under development
 
-- no changes in this release.
+- Enh #48: Validate class-level attributes against raw input before hydration.
 
 ## 2.0.2 December 16, 2025
 
