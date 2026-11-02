@@ -9,6 +9,7 @@ use Yiisoft\Hydrator\AttributeHandling\ResolverFactory\ContainerAttributeResolve
 use Yiisoft\Hydrator\Hydrator;
 use Yiisoft\Hydrator\Validator\Attribute\ValidateResolver;
 use Yiisoft\Hydrator\Validator\Tests\Support\TestHelper;
+use Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support\NonValidatedInputWithValidate;
 use Yiisoft\Hydrator\Validator\Tests\TestEnvironments\Php81\Support\ValidateInput;
 use Yiisoft\Hydrator\Validator\ValidatingHydrator;
 use Yiisoft\Test\Support\Container\SimpleContainer;
@@ -48,6 +49,26 @@ final class ValidatingHydratorTest extends TestCase
         );
         $this->assertSame('y', $object->b);
         $this->assertSame('z', $object->c);
+    }
+
+    public function testCreateNonValidatedInputWithValidateAttribute(): void
+    {
+        $object = TestHelper::createValidatingHydrator()
+            ->create(NonValidatedInputWithValidate::class, ['b' => 'y']);
+
+        $this->assertInstanceOf(NonValidatedInputWithValidate::class, $object);
+        $this->assertSame('.', $object->a);
+        $this->assertSame('y', $object->b);
+    }
+
+    public function testHydrateNonValidatedInputWithValidateAttribute(): void
+    {
+        $object = new NonValidatedInputWithValidate();
+
+        TestHelper::createValidatingHydrator()->hydrate($object, ['b' => 'y']);
+
+        $this->assertSame('.', $object->a);
+        $this->assertSame('y', $object->b);
     }
 
     public function testValidateResolverCleanupAfterCreate(): void
